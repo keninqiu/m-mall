@@ -1,0 +1,15 @@
+  <scroll-view scroll-y="true" class="swiper-item-box">
+    <view class="shop_item">
+      <navigator class="list" wx:for="{{goods.items}}" wx:key="item" url="/">
+        <view class="image_box">
+          <image src="{{item.thumb_url}}"></image>
+        </view>
+        <view class="goods">
+          <view class="product_name">{{item.name}}</view>
+          <view class="product_info">
+            <view class="price">￥{{item.price}}</view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </scroll-view>

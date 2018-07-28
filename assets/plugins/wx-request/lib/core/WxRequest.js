@@ -85,7 +85,7 @@ class WxRequest {
                 },
             ],
             // 基于响应状态返回成功或失败
-            validateStatus: status => status >= 200 && status < 300,
+            validateStatus: status => status >= 200 && status < 600,
         }
 
         // 合并参数

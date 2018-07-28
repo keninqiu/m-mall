@@ -14,8 +14,18 @@
         <view class="price">¥ {{ goods.item.price }}</view>
         <text class="remark">{{ goods.item.remark }}</text>
     </view>
-    <view class="btn-plus" bindtap="addCart">
-        <image class="icon" src="../../../assets/images/iconfont-plus-circle.png" />
-        <text>加入购物车</text>
-    </view>
+        <view class="btn-plus" bindtap="addCart">
+            <image class="icon" src="../../../assets/images/iconfont-plus-circle.png" />
+            <text>加入购物车</text>
+        </view>
+
+        <view class="btn-plus" bindtap="checkCart">
+            <image class="icon" src="../../../assets/images/iconfont-cart.png" />
+            <text>查看购物车</text>
+        </view> 
+
+        <view class="btn-plus" bindtap="goShop">
+            <image class="icon" src="../../../assets/images/iconfont-cart.png" />
+            <text>继续购物</text>
+        </view>         
 </view>

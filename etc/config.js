@@ -1,8 +1,8 @@
 export default {
 	// 线上环境
-	//basePath: 'https://www.skyvow.cn/api', 
-	//domain: 'https://www.skyvow.cn/', 
+	//basePath: 'http://mall.miri.io/api', 
+	//domain: 'http://mall.miri.io/', 
 	// 本地环境
 	 basePath: 'http://localhost:3005/api', 
-	 domain: 'http://localhost:3005/', 
-}
+	 domain: 'http://localhost:3005/',     
+} 

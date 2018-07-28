@@ -5,7 +5,7 @@ Page({
         activeIndex: 0,
         navList: [],
         indicatorDots: !0,
-        autoplay: !1,
+        autoplay: 1,
         current: 0,
         interval: 3000,
         duration: 1000,
@@ -56,7 +56,6 @@ Page({
         this.banner.queryAsync({is_show: !0})
         .then(res => {
             const data = res.data
-        	console.log(data)
         	if (data.meta.code == 0) {
                 data.data.items.forEach(n => n.path = App.renderImage(n.images[0].path))
         		this.setData({
@@ -73,7 +72,7 @@ Page({
         //     limit: 4, 
         // })
         this.classify.queryAsync({
-            page: 1, 
+            page: 2, 
             limit: 4, 
         })
         .then(res => {

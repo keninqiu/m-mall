@@ -18,9 +18,32 @@
         <label class="weui-search-bar__label" bindtap="search">
             <icon class="weui-icon-search" type="search" size="14"></icon>
             <view class="weui-search-bar__text">搜索</view>
-        </label>
+        </label> 
     </view>
 </view>
+
+<!--
+    <view class="nav_list">
+    
+      <navigator open-type="navigate" url="/pages/classify/detail">
+        <image src="../../assets/images/icon_nav_01_new.png" class="nav_icon"/>
+        <view class="nav_text">新品上市</view>
+      </navigator>
+      
+      <navigator open-type="navigate" url="/pages/classify/detail">
+        <image src="../../assets/images/icon_nav_02_new.png" class="nav_icon"/>
+        <view class="nav_text">限时优惠</view>
+      </navigator>
+      <navigator open-type="navigate" url="/pages/classify/detail">
+        <image src="../../assets/images/icon_nav_03_new.png" class="nav_icon"/>
+        <view class="nav_text">超值团购</view>
+      </navigator>
+      <navigator open-type="navigate" url="/pages/classify/detail">
+        <image src="../../assets/images/icon_nav_04_new.png" class="nav_icon"/>
+        <view class="nav_text">热卖商品</view>
+      </navigator>
+    </view>
+-->
 
 <template is="nav" data="{{ navList, activeIndex }}"/>
 <template is="list" data="{{ goods, prompt }}"/>

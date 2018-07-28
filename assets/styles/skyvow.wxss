@@ -57,7 +57,7 @@ page{
 }
 
 .btn-plus {
-	position: fixed;
+	position: relative;
 	bottom: 0;
 	left: 0;
     display: block;

@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/start/index",
     "pages/index/index",
     "pages/classify/index",
     "pages/cart/index",
@@ -18,12 +17,13 @@
     "pages/search/index",
     "pages/about/index",
     "pages/login/index",
-    "pages/user/index"
+    "pages/user/index",
+    "pages/classify/detail"
   ],
   "window": {
     "navigationBarBackgroundColor": "#479de6",
     "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "小商城",
+    "navigationBarTitleText": "加国代购",
     "backgroundColor": "#f8f8f8",
     "backgroundTextStyle": "dark"
   },

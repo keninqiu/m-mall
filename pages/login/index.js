@@ -61,6 +61,12 @@ Page({
 			console.log('wechatSignIn', data)
 			if (data.meta.code == 0) {
 				App.WxService.setStorageSync('token', data.data.token)
+
+				var t = new Date();
+				t.setSeconds(t.getSeconds() + 60*5-10)
+				console.log('t=')
+				console.log(t)
+				App.WxService.setStorageSync('expired_at', t)
 				cb()
 			} else if(data.meta.code == 40029) {
 				App.showModal()
@@ -96,9 +102,8 @@ Page({
 		})
 		.then(res => {
             const data = res.data
-            console.log(data)
 			if (data.meta.code == 0) {
-				App.WxService.setStorageSync('token', data.data.token)
+				App.WxService.setStorageSync('token', data.data.token)			
 				cb()
 			}
 		})

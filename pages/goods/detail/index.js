@@ -26,16 +26,40 @@ Page({
     onShow() {
         this.getDetail(this.data.id)
     },
+    checkCart() {
+        App.WxService.switchTab('/pages/cart/index')
+    },
+    goShop() {
+        App.WxService.switchTab('/pages/index/index')
+    },
     addCart(e) {
-        const goods = this.data.goods.item._id
-        App.HttpService.addCartByUser(goods)
-        .then(res => {
-            const data = res.data
-            console.log(data)
-            if (data.meta.code == 0) {
-                this.showToast(data.meta.message)
+        var token = App.WxService.getStorageSync('token')
+        if(token == null) {
+            App.WxService.redirectTo('/pages/login/index') 
+        }
+        else {
+            var playload = JSON.parse(atob(token.split('.')[1]));
+
+            var exp = playload.exp
+            var current = Math.floor(Date.now() / 1000)
+            if(exp < current) {
+                App.WxService.redirectTo('/pages/login/index') 
             }
-        })
+            else {
+                const goods = this.data.goods.item._id
+                App.HttpService.addCartByUser(goods)
+                .then(res => {
+                    const data = res.data
+                    console.log('data=');
+                    console.log(data)
+                    if (data.meta.code == 0) {
+                        this.showToast(data.meta.message)
+                    }
+                })                  
+            }
+          
+        }
+
     },
     previewImage(e) {
         const urls = this.data.goods && this.data.goods.item.images.map(n => n.path)

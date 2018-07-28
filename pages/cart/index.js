@@ -39,6 +39,7 @@ Page({
         App.HttpService.getCartByUser()
         .then(res => {
             const data = res.data
+            console.log('data here')
             console.log(data)
             if (data.meta.code == 0) {
                 data.data.forEach(n => n.goods.thumb_url = App.renderImage(n.goods.images[0] && n.goods.images[0].path))
@@ -46,6 +47,9 @@ Page({
                     'carts.items': data.data,
                     'prompt.hidden': data.data.length,
                 })
+            }
+            else {
+                console.log('error')
             }
         })
     },

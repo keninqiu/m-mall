@@ -15,6 +15,9 @@ Page({
     onShow() {
         this.getOrderDetail(this.data.id)
     },
+    onlinePay() {
+
+    },
     getOrderDetail(id) {
         // App.HttpService.getOrderDetail(id)
         this.order.getAsync({id: id})
