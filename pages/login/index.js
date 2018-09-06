@@ -15,6 +15,12 @@ Page({
     login() {
     	this.signIn(this.goIndex)
     },
+    signUpWechat() {
+    	this.wechatSignUp(this.goIndex)
+    },
+    signInWechat() {
+    	this.wechatSignIn(this.goIndex)
+    },
     goIndex() {
     	App.WxService.switchTab('/pages/index/index')
     },
@@ -44,14 +50,14 @@ Page({
 			})
 		})
 		.then(data => {
-            console.log(data)
+            console.log(data) 
 		})
 	},
-	wechatSignIn(cb) {
+	wechatSignIn(cb) {   
 		if (App.WxService.getStorageSync('token')) return
 		App.WxService.login()
 		.then(data => {
-			console.log('wechatSignIn', data.code)
+			console.log('wechatSignIn1', data) 
 			return App.HttpService.wechatSignIn({
 				code: data.code
 			})
@@ -66,7 +72,7 @@ Page({
 				t.setSeconds(t.getSeconds() + 60*5-10)
 				console.log('t=')
 				console.log(t)
-				App.WxService.setStorageSync('expired_at', t)
+				App.WxService.setStorageSync('expired_at', t) 
 				cb()
 			} else if(data.meta.code == 40029) {
 				App.showModal()

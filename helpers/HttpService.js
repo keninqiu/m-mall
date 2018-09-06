@@ -17,6 +17,7 @@ class HttpService extends WxRequest {
 			cart        : '/cart', 
 			address     : '/address', 
 			order       : '/order', 
+			wechatPay   : '/order/wechatPay'
         }
         this.interceptors.use({
             request(request) {
@@ -54,7 +55,7 @@ class HttpService extends WxRequest {
 	wechatSignUp(params) {
 		return this.postRequest(this.$$path.wechatSignUp, {
 			data: params,
-		})
+		})  
 	}
 
 	wechatSignIn(params) {
@@ -74,7 +75,13 @@ class HttpService extends WxRequest {
 			data: params,
 		}) 
 	}
-
+	wechatPay(params) {
+		console.log('params=')
+		console.log(params)
+		return this.postRequest(this.$$path.wechatPay, {
+			data: params,
+		}) 		
+	}
 	signOut() {
 		return this.postRequest(this.$$path.signOut) 
 	}

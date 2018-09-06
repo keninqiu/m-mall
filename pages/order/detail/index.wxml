@@ -40,7 +40,7 @@
         </view>
         <view class="weui-media-box weui-media-box_text">
             <view class="weui-media-box__desc">
-                <navigator url="" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" bindtap="onlinePay">在线支付</navigator>            
+                <navigator url="" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" bindtap="wechatPay">微信支付</navigator>            
             </view>
         </view>
         <view class="weui-media-box weui-media-box_text">

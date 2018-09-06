@@ -30,11 +30,11 @@ Page({
         App.WxService.switchTab('/pages/cart/index')
     },
     goShop() {
-        App.WxService.switchTab('/pages/index/index')
+        App.WxService.switchTab('/pages/index/index') 
     },
     addCart(e) {
         var token = App.WxService.getStorageSync('token')
-        if(token == null) {
+        if(token == null || token == '') {
             App.WxService.redirectTo('/pages/login/index') 
         }
         else {
@@ -43,6 +43,7 @@ Page({
             var exp = playload.exp
             var current = Math.floor(Date.now() / 1000)
             if(exp < current) {
+                App.WxService.removeStorageSync('token')
                 App.WxService.redirectTo('/pages/login/index') 
             }
             else {

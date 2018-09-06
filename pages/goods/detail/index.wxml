@@ -12,7 +12,7 @@
     <view class="shopping-container">
         <view class="name">{{ goods.item.name }}</view>
         <view class="price">¥ {{ goods.item.price }}</view>
-        <text class="remark">{{ goods.item.remark }}</text>
+        <text class="remark">{{ goods.item.remark }}</text>     
     </view>
         <view class="btn-plus" bindtap="addCart">
             <image class="icon" src="../../../assets/images/iconfont-plus-circle.png" />

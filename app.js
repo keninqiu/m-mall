@@ -17,6 +17,7 @@ App({
 	getUserInfo() {
 		return this.WxService.login()
 		.then(data => {
+			console.log('date from WxService.login');
             console.log(data)
 			return this.WxService.getUserInfo()
 		})

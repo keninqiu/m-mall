@@ -10,9 +10,12 @@ Page({
     },
     onLoad(option) {
         console.log(option)
-        this.setData({
-            address_id: option.id
-        })
+        if(option&&option.id) {
+            this.setData({
+                address_id: option.id
+            })            
+        }
+
 
         const carts = {
             items: App.WxService.getStorageSync('confirmOrder'), 

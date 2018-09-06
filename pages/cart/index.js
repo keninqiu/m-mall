@@ -63,7 +63,10 @@ Page({
         })
     },
     confirmOrder(e) {
+        console.log('e in confirmOrder=')
         console.log(e)
+        console.log('this.data=')
+        console.log(this.data)
         App.WxService.setStorageSync('confirmOrder', this.data.carts.items)
         App.WxService.navigateTo('/pages/order/confirm/index')
     },
