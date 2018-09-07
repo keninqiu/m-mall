@@ -35,6 +35,11 @@ Page({
     addCart(e) {
         var token = App.WxService.getStorageSync('token')
         if(token == null || token == '') {
+            var callBackFunction = {
+                op:"addCart",
+                goods:this.data.goods.item._id
+            }
+            App.WxService.setStorageSync('callback', callBackFunction)
             App.WxService.redirectTo('/pages/login/index') 
         }
         else {
@@ -44,6 +49,11 @@ Page({
             var current = Math.floor(Date.now() / 1000)
             if(exp < current) {
                 App.WxService.removeStorageSync('token')
+                var callBackFunction = {
+                    "op":"addCart",
+                    "goods":this.data.goods.item._id
+                }
+                App.WxService.setStorageSync('callback', callBackFunction)                
                 App.WxService.redirectTo('/pages/login/index') 
             }
             else {

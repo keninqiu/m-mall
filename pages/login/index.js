@@ -81,6 +81,13 @@ Page({
 			}
 		})
 	},
+    showToast(message) {
+        App.WxService.showToast({
+            title   : message, 
+            icon    : 'success', 
+            duration: 1500, 
+        })
+    },	
 	wechatSignUp(cb) {
 		App.WxService.login()
 		.then(data => {
@@ -94,7 +101,25 @@ Page({
 			console.log('wechatSignUp', data)
 			if (data.meta.code == 0) {
 				App.WxService.setStorageSync('token', data.data.token)
-				cb()
+				var callback = App.WxService.getStorageSync('callback')
+				if(callback) {
+					var op = callback.op
+					if(op == 'addCart') {
+						var goods = callback.goods
+		                App.HttpService.addCartByUser(goods)
+		                .then(res => {
+		                    const data = res.data
+		                    if (data.meta.code == 0) {
+		                        this.showToast(data.meta.message)
+		                        cb()
+		                    }
+		                }) 						
+					}
+				}
+				else {
+					cb()
+				}
+				
 			} else if(data.meta.code == 40029) {
 				App.showModal()
 			}
