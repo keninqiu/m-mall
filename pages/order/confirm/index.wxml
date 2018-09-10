@@ -26,7 +26,14 @@
             <view class="weui-form-preview__value">x{{ item.total }} ¥ {{ item.totalAmount }}</view>
         </view>
     </view>
+    <!--
     <view class="weui-form-preview__ft">
-        <navigator url="" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" bindtap="addOrder">提交订单</navigator>
+        <button class="weui-btn" type="primary" bindtap="addOrder">提交订单</button>
     </view>
+    -->
+ 
 </view>
+
+    <view class="button-sp-area">
+        <button class="weui-btn" type="primary" bindtap="addOrder">提交订单</button>
+    </view>   

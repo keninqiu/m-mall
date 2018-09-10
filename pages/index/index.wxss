@@ -14,7 +14,8 @@
 .topbar-item {
     color: #333;
     text-align: center;
-    padding: 10px 0;
+    padding: 2px 0;
+    font-size:36rpx;
 }
 
 .topbar-item.active {
@@ -32,6 +33,6 @@ swiper-item image {
 }
 
 .nav_list{color:#404040;display:flex;font-size:26rpx;justify-content:space-between;padding:17rpx 50rpx}
-.nav_list navigator{text-align:center}
-.nav_list .nav_icon{height:80rpx;margin:0 auto;width:80rpx;margin-bottom:14rpx}
+.nav_list view{text-align:center}
+.nav_list .nav_icon{height:80rpx;width:80rpx;margin-bottom:2rpx}
 .nav_list .nav_text{font-size:26rpx}

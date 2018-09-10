@@ -797,7 +797,7 @@ icon {
 }
 .weui-media-box__title {
   font-weight: 400;
-  font-size: 17px;
+  font-size: 13px;
   width: auto;
   overflow: hidden;
   text-overflow: ellipsis;

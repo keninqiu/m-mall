@@ -94,7 +94,7 @@ Page({
         this.data.carts.items.forEach(n => {
             params.items.push({
                 id: n.goods._id,
-                total: n.total,
+                total: n.total,  
             })
         })
         console.log(params)

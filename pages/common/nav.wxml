@@ -1,3 +1,4 @@
+<!--
 <template name="nav">
     <view class="weui-flex topbar">
       <block wx:for="{{ navList }}" wx:key="">
@@ -5,5 +6,17 @@
         	<view class="topbar-item {{ index == activeIndex ? 'active' : '' }}">{{ item.name }}</view>
         </view>
       </block>
+    </view>
+</template>
+-->
+<template name="nav">
+    <view class="nav_list">
+      <block wx:for="{{ navList }}" wx:key="">
+	      <view data-type="{{ item._id }}" data-index="{{ index }}" catchtap="onTapTag">
+	        <image src="../../assets/images/icon_nav_0{{index+1}}_new.png" class="nav_icon"/>
+	        <view class="topbar-item {{ index == activeIndex ? 'active' : '' }}">{{ item.name }}</view>
+	      </view>
+      </block>
+
     </view>
 </template>

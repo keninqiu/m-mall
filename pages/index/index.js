@@ -72,7 +72,7 @@ Page({
         //     limit: 4, 
         // })
         this.classify.queryAsync({
-            page: 2, 
+            page: 1, 
             limit: 4, 
         })
         .then(res => {
