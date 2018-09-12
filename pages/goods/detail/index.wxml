@@ -27,5 +27,32 @@
         <view class="btn-plus" bindtap="goShop">
             <image class="icon" src="../../../assets/images/iconfont-cart.png" />
             <text>继续购物</text>
-        </view>         
+        </view>      
+
+    <view class="detail-bottom">
+      <view class="bottom-box">
+        <view class="item" bindtap="goShop">
+          <i class="iconfont icon-home"></i>
+          <view class="doc">首页</view>
+        </view>
+<!--        
+        <contact-button class="contact">
+        </contact-button>
+
+        <view class="item">
+          <i class="iconfont icon-message"></i>
+          <view class="doc">客服</view>
+        </view>
+        <contact-button class="contact">
+        </contact-button>
+        <view class="item {{isFavorite?'selec_active':''}}">
+          <i class="iconfont icon-collection"></i>
+          <view class="doc">收藏</view>
+        </view>
+-->
+        <view class="sy-bottom {{canOrder?'btn_cart':'cart_color'}}" bindtap="addCart">加入购物车</view>
+        <view class="sy-bottom {{canOrder?'btn_order':'order_color'}}" bindtap="buyNow">立即购买</view>
+      </view>
+    </view>
+
 </view>

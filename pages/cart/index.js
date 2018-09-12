@@ -33,7 +33,17 @@ Page({
     onLoad() {
     },
     onShow() {
-        this.getCarts()
+        var token = App.WxService.getStorageSync('token')
+        if(token == null || token == '') {
+            var callBackFunction = {
+                op:"showCart",
+            }
+            App.WxService.setStorageSync('callback', callBackFunction)
+            App.WxService.redirectTo('/pages/login/index') 
+        }
+        else {        
+            this.getCarts()
+        }
     },
     getCarts() {
         App.HttpService.getCartByUser()
@@ -41,7 +51,7 @@ Page({
             const data = res.data
             console.log('data here')
             console.log(data)
-            if (data.meta.code == 0) {
+            if (data && data.meta && data.meta.code == 0) {
                 data.data.forEach(n => n.goods.thumb_url = App.renderImage(n.goods.images[0] && n.goods.images[0].path))
                 this.setData({
                     'carts.items': data.data,

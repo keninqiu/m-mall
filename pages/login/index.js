@@ -115,6 +115,19 @@ Page({
 		                    }
 		                }) 						
 					}
+					else if(op == 'buyNow') {
+						var goods = callback.goods
+		                App.HttpService.addCartByUser(goods)
+		                .then(res => {
+		                    const data = res.data
+		                    if (data.meta.code == 0) {
+		                        App.WxService.switchTab('/pages/cart/index')
+		                    }
+		                }) 							
+					}
+					else if(op == 'showCart') {
+						App.WxService.switchTab('/pages/cart/index')
+					}
 				}
 				else {
 					cb()
